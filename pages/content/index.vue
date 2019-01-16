@@ -16,14 +16,8 @@
 import { mapMutations } from "vuex";
 export default {
   created() {
-    this.$socket.emit(
-      "content.getRelated",
-      { type: "project" },
-      this.onLoadList
-    );
-    this.setFab([
-      { icon: "fa-plus", color: "green", to: `/project/create` },
-    ]);
+    this.$socket.emit("content.getRelated", {}, this.onLoadList);
+    this.setFab([{ icon: "fa-plus", color: "green", to: `/project/create` }]);
   },
   data() {
     return {

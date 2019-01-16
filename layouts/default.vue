@@ -2,21 +2,16 @@
   <v-app>
     <v-navigation-drawer clipped v-model="drawer" fixed app>
       <v-list class="drawer-menu">
-        <v-list-tile router :to="item.to" :key="i" v-for="(item, i) in items" exact>
+        <v-list-tile
+          v-on:click="item.click!==undefined?item.click():$router.push(item.to)"
+          :key="i"
+          v-for="(item, i) in items"
+        >
           <v-list-tile-action>
             <v-icon v-html="item.icon"></v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-spacer/>
-        <v-list-tile exact @click="logout">
-          <v-list-tile-action>
-            <v-icon>fa-sign-out-alt</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Exit</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -80,7 +75,8 @@ export default {
         { icon: "fa-bug", title: "Багтрекер", to: "/bugtracker" },
         { icon: "fa-sort-numeric-down", title: "Счетчики", to: "/counter" },
         { icon: "fa-clock", title: "Таймеры", to: "/timer" },
-        { icon: "fa-stopwatch", title: "Секундомеры", to: "/stopwatch" }
+        { icon: "fa-stopwatch", title: "Секундомеры", to: "/stopwatch" },
+        { icon: "fa-sign-out-alt", title: "Выход", click: this.logout }
       ],
       right: true
     };

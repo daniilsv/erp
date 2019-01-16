@@ -9,10 +9,7 @@ export const mutations = {
   setDrawer: set("drawer"),
   toggleDrawer: toggle("drawer"),
   setTitle: set("title"),
-  setFab: set("fab"),
-  unsetFab(state) {
-    state.fab = null;
-  }
+  setFab: set("fab")
 };
 export const getters = {};
 export const actions = {};

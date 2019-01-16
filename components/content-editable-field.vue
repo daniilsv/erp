@@ -20,7 +20,6 @@
 
 <script>
 export default {
-  name: "v-form-generator-field",
   props: ["value"],
 
   data() {

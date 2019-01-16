@@ -1,18 +1,30 @@
 import { mapActions, mapMutations } from "vuex";
+import { DateTime, UserSelect } from "~/components/fields";
 
-export default ({ CForm, type }) => ({
+export default ({ type }) => ({
   created() {
     this.read();
   },
   data() {
     return {
-      item: undefined,
-      old: undefined,
+      item: {},
+      old: {},
       errorSnackbar: false,
-      errorText: ""
+      errorText: "",
+      tagSearch: null,
+      tagsList: ["FrontEnd", "BackEnd", "ServerSide"],
+      types: [
+        { value: "project", text: "Проект" },
+        { value: "tak", text: "Задача" },
+        { value: "bug", text: "Баг" },
+        { value: "note", text: "Заметка" },
+        { value: "timer", text: "Таймер" },
+        { value: "stopwatch", text: "Секундомер" },
+        { value: "counter", text: "Счетчик" }
+      ]
     };
   },
-  components: { CForm },
+  components: { DateTime, UserSelect },
 
   methods: {
     ...mapActions({ cRead: "content/read", cUpdate: "content/update" }),
@@ -51,6 +63,17 @@ export default ({ CForm, type }) => ({
     showError(error) {
       this.errorSnackbar = true;
       this.errorText = error;
+    },
+    tagFilter(item, queryText, itemText) {
+      const hasValue = val => val || "";
+      const text = hasValue(itemText);
+      const query = hasValue(queryText);
+      return (
+        text
+          .toString()
+          .toLowerCase()
+          .indexOf(query.toString().toLowerCase()) > -1
+      );
     }
   }
 });

@@ -7,8 +7,8 @@
 
 
 <script>
-import authLogin from "~/components/auth-login.vue";
-import authRegistration from "~/components/auth-registration.vue";
+import authLogin from "~/components/auth/login.vue";
+import authRegistration from "~/components/auth/registration.vue";
 export default {
   layout: "auth",
   components: { authRegistration, authLogin }

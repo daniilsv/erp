@@ -1,6 +1,10 @@
 <template>
   <v-layout align-start justify-start row>
     {{item}}
+    <div v-for="(field, index) in item.fields" :key="index">
+      <CField v-model="fields[index]"/>
+    </div>
+
     <v-snackbar v-model="errorSnackbar" color="error">
       {{ errorText }}
       <v-btn dark flat @click="errorSnackbar = false">Close</v-btn>
@@ -11,6 +15,7 @@
 
 <script>
 import { mapActions, mapMutations } from "vuex";
+import CField from "~/components/content-editable-field.vue";
 export default {
   created() {
     this.read();
@@ -22,7 +27,7 @@ export default {
       errorText: ""
     };
   },
-
+  components: { CField },
   methods: {
     ...mapActions({ cRead: "content/read", cDelete: "content/delete" }),
     ...mapMutations({ setFab: "view/setFab" }),
