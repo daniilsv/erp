@@ -1,11 +1,11 @@
-# dependencies
-node_modules
+# idea files
+**/.idea/
 
-# logs
-npm-debug.log
+# dependencies
+**/node_modules/
 
 # Nuxt build
-.nuxt
+**/.nuxt/
 
 # Nuxt generate
-dist
+front/dist/
