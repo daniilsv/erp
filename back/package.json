@@ -1,8 +1,5 @@
 {
-  "name": "choolo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "dvs.erp.back",
   "scripts": {
     "start": "nodemon ./app/index.js"
   },

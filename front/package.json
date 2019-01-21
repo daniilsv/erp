@@ -1,9 +1,5 @@
 {
-  "name": "erp.dvs.nuxt",
-  "version": "1.0.0",
-  "description": "Nuxt.js + Vuetify.js project",
-  "author": "DVS <danstrrr@yandex.ru>",
-  "private": true,
+  "name": "dvs.erp.front",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -11,6 +7,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "acorn": "^6.0.0",
     "chartist": "0.11.0",
     "luxon": "^1.10.0",
     "node-sass": "^4.9.3",
