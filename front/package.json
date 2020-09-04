@@ -10,7 +10,7 @@
     "acorn": "^6.0.0",
     "chartist": "0.11.0",
     "luxon": "^1.10.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.13.1",
     "nuxt": "^2.2.0",
     "nuxt-vuex-localstorage": "^1.1.7",
     "sass-loader": "^7.1.0",
