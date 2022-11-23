@@ -14,7 +14,7 @@
     "nuxt": "^2.2.0",
     "nuxt-vuex-localstorage": "^1.1.7",
     "sass-loader": "^7.1.0",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.5.0",
     "socket.io-client": "^2.2.0",
     "vee-validate": "^2.1.5",
     "vue": "^2.5.17",
